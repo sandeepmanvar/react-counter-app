@@ -1,3 +1,5 @@
+![app image](https://github.com/sandeepmanvar/react-counter-app/blob/master/app-preview.png?raw=true)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
