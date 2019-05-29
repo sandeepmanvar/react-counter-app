@@ -16,12 +16,12 @@ class App extends Component {
 
   constructor() {
     super();
-    console.log("App - Constructor");
+    //console.log("App - Constructor");
   }
 
   componentDidMount() {
     // here you can write ajax call and get data from the server
-    console.log("App - Mounted");
+    //console.log("App - Mounted");
   }
 
   handleDelete = counterId => {
@@ -34,7 +34,7 @@ class App extends Component {
       c.value = 0;
       return c;
     });
-    console.log(counters);
+    //console.log(counters);
     this.setState({ counters });
   };
 
@@ -46,8 +46,17 @@ class App extends Component {
     this.setState({ counters });
   };
 
+  handleDecrement = counter => {
+    console.log(counter);
+    const counters = [...this.state.counters];
+    const index = counters.indexOf(counter);
+    counters[index] = { ...counter };
+    counters[index].value--;
+    this.setState({ counters });
+  };
+
   render() {
-    console.log("App - Rendered");
+    //console.log("App - Rendered");
     return (
       <React.Fragment>
         <Navbar
@@ -59,6 +68,7 @@ class App extends Component {
             onReset={this.handleReset}
             onIncrement={this.handleIncrement}
             onDelete={this.handleDelete}
+            onDecrement={this.handleDecrement}
           />
         </main>
       </React.Fragment>
